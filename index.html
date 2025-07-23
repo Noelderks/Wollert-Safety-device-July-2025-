@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Safety Device Inspection Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .device { margin-bottom: 30px; }
+        .details { display: none; margin-top: 10px; padding-left: 20px; border-left: 2px solid #ccc; }
+    </style>
+    <script>
+        function toggleDetails(selectElem, id) {
+            var details = document.getElementById(id);
+            details.style.display = selectElem.value === "Applicable" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <h1>Safety Device Inspection Form</h1>
+    <form>
+        <!-- Example Device Section -->
+        <div class="device">
+            <label><strong>Emergency Stop Lanyard</strong></label><br>
+            <select onchange="toggleDetails(this, 'details0')">
+                <option value="">Select Applicability</option>
+                <option value="Applicable">Applicable</option>
+                <option value="Not Applicable">Not Applicable</option>
+            </select>
+            <div class="details" id="details0">
+                <p><strong>Inspection Criteria:</strong> Full coverage of hazardous zones, proper tension, immediate stop functionality, manual reset, red rope, clear signage, fail-safe, resistant to wear and environment.</p>
+                <p><strong>Compliance References:</strong> WHS Regulation 191, VIC OHS Regulations r79, AS 4024, SHE-MSP-WHS-07.013</p>
+            </div>
+        </div>
+        <!-- Add more devices here following the same structure -->
+    </form>
+</body>
+</html>
